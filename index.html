@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Poplife Genome Browser</title>
+	<link rel="shortcut icon" href="./poplife-icon.png"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<meta name="theme-color" content="#EFE5E1"/>
+	<meta name="description" content="A fast and flexible genome browser"/>
+	<script defer="defer" src="static/js/main.0dd43a17.js"></script>
+	<link rel="manifest" href="./manifest.json"/>
+	<link rel="stylesheet" href="styles.css">
+	<script type="module" src="conjunto.js"></script>
+
+	<script src="/Mscripts/linkar_header.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+	<script>
+		function autoclick() {
+		console.log('Starting a new session ...');
+		var targetElement = document.querySelector('.MuiTypography-root.MuiTypography-subtitle2.css-1927v8i-name');
+		if (targetElement) {targetElement.click();}}
+
+		var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+			for (var i = 0; i < mutation.addedNodes.length; i++) {
+				var node = mutation.addedNodes[i];if (node.textContent.includes('Start a new session')) {autoclick();break;}}}});});
+		observer.observe(document, { childList: true, subtree: true });
+	</script>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  	const barsToggle = document.querySelector(".bars");const navBar = document.querySelector(".nav-bar ul");
+		barsToggle.addEventListener("click", function() {navBar.classList.toggle("activo");});});
+  	</script>
+</head>
+
+<body>
+	<div id="header-placeholder"></div>
+	<div class="barraentre"></div>
+	<div id="jbrowse_linear_genome_view"></div>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root" class="hidden"></div>
+	<footer class="footer" id="footer" class="hidden">
+		<p>Copyright © 2023. All rights reserved.</p>
+	</footer>
+</body>
+</html>
